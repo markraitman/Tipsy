@@ -40,8 +40,18 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        splitNumberLabel.text = String(format: "%.0f", sender.value)
     }
     @IBAction func calculatePressed(_ sender: UIButton) {
+        if zeroPctButton.isSelected == true{
+            print(0.0)
+        } else if tenPctButton.isSelected == true{
+            print(0.1)
+        } else {
+            print(0.2)
+        }
+        
+        print(splitNumberLabel.text!)
     }
     
 
