@@ -116,7 +116,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEi-FC-3XV">
-                                <rect key="frame" x="100" y="811.5" width="214" height="50"/>
+                                <rect key="frame" x="100" y="812" width="214" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DMO-DS-hte"/>
@@ -167,9 +167,9 @@
                         <viewLayoutGuide key="safeArea" id="6vS-Ue-Igc"/>
                         <color key="backgroundColor" red="0.97254901959999995" green="1" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="DEi-FC-3XV" firstAttribute="top" secondItem="j1U-8d-U89" secondAttribute="bottom" constant="268" id="53O-Vk-2cX"/>
                             <constraint firstAttribute="bottom" secondItem="4Ef-jA-EsN" secondAttribute="bottom" id="78r-Bw-Jmp"/>
                             <constraint firstItem="kTR-18-yRz" firstAttribute="top" secondItem="6vS-Ue-Igc" secondAttribute="top" constant="50" id="MgZ-Ff-Inv"/>
+                            <constraint firstItem="6vS-Ue-Igc" firstAttribute="bottom" secondItem="DEi-FC-3XV" secondAttribute="bottom" id="Omk-wV-QFb"/>
                             <constraint firstItem="kTR-18-yRz" firstAttribute="leading" secondItem="j1U-8d-U89" secondAttribute="trailing" constant="-414" id="WTu-M3-xhj"/>
                             <constraint firstItem="4Ef-jA-EsN" firstAttribute="leading" secondItem="6vS-Ue-Igc" secondAttribute="leading" id="d0c-Lt-8Fh"/>
                             <constraint firstItem="4Ef-jA-EsN" firstAttribute="top" secondItem="kTR-18-yRz" secondAttribute="bottom" constant="50" id="fUT-4S-7tU"/>
@@ -185,6 +185,7 @@
                         <outlet property="tenPctButton" destination="GmZ-PV-3lo" id="ILB-BZ-L7B"/>
                         <outlet property="twentyPctButton" destination="OUW-XK-Kos" id="8js-k0-kvH"/>
                         <outlet property="zeroPctButton" destination="Opp-5f-cDk" id="ut1-QR-t9C"/>
+                        <segue destination="52J-2o-VnJ" kind="presentation" identifier="goToResult" id="qIa-YU-vEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Plg-eW-I17" sceneMemberID="firstResponder"/>
@@ -196,7 +197,7 @@
             <objects>
                 <viewController id="52J-2o-VnJ" customClass="ResultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="09U-Dl-3vC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-23-1en">
@@ -237,7 +238,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Axh-po-i2m">
                                 <rect key="frame" x="20" y="368" width="374" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtS-Gq-nWx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtS-Gq-nWx">
                                         <rect key="frame" x="33.5" y="0.0" width="307" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" red="0.58431372550000005" green="0.60392156860000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -246,7 +247,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USP-z1-9DV">
-                                <rect key="frame" x="107" y="812" width="200" height="50"/>
+                                <rect key="frame" x="107" y="758" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ppk-Ha-enr"/>
@@ -270,11 +271,11 @@
                             <constraint firstItem="Axh-po-i2m" firstAttribute="top" secondItem="0aU-23-1en" secondAttribute="bottom" constant="50" id="5Oa-sA-lUy"/>
                             <constraint firstItem="Axh-po-i2m" firstAttribute="leading" secondItem="ssJ-s0-VML" secondAttribute="leading" constant="20" id="7Y6-hN-vz2"/>
                             <constraint firstAttribute="trailing" secondItem="Axh-po-i2m" secondAttribute="trailing" constant="20" id="DHJ-w0-vp9"/>
+                            <constraint firstItem="ssJ-s0-VML" firstAttribute="bottom" secondItem="USP-z1-9DV" secondAttribute="bottom" id="IFI-g3-bUk"/>
                             <constraint firstItem="0aU-23-1en" firstAttribute="trailing" secondItem="ssJ-s0-VML" secondAttribute="trailing" id="LWK-RP-VmM"/>
                             <constraint firstItem="0aU-23-1en" firstAttribute="top" secondItem="09U-Dl-3vC" secondAttribute="top" id="M4z-El-LvE"/>
                             <constraint firstItem="0aU-23-1en" firstAttribute="leading" secondItem="ssJ-s0-VML" secondAttribute="leading" id="NFf-Zg-6rb"/>
                             <constraint firstItem="USP-z1-9DV" firstAttribute="centerX" secondItem="09U-Dl-3vC" secondAttribute="centerX" id="Qea-dP-Fwp"/>
-                            <constraint firstItem="USP-z1-9DV" firstAttribute="top" secondItem="Axh-po-i2m" secondAttribute="bottom" constant="384" id="dne-cF-R56"/>
                         </constraints>
                     </view>
                     <connections>

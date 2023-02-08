@@ -9,6 +9,12 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
+    //MARK: Properties
+    var result: Float = 0.00
+    var resultString = ""
+    var chosenPct = ""
+    
+    
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,23 +43,55 @@ class CalculatorViewController: UIViewController {
             tenPctButton.isSelected = false
             twentyPctButton.isSelected = true
         }
+        
+        chosenPct = sender.currentTitle!
+        
+        billTextField.endEditing(true)
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         splitNumberLabel.text = String(format: "%.0f", sender.value)
+        
+        billTextField.endEditing(true)
     }
     @IBAction func calculatePressed(_ sender: UIButton) {
-        if zeroPctButton.isSelected == true{
-            print(0.0)
-        } else if tenPctButton.isSelected == true{
-            print(0.1)
+        if zeroPctButton.isSelected == true && billTextField.text != ""{
+            result = (Float(billTextField.text!)! + (Float(billTextField.text!)! * 0.00)) / Float(splitNumberLabel.text!)!
+            resultString = String(format: "%.2f", result)
+            
+            self.performSegue(withIdentifier: "goToResult", sender: self)
+            
+            print(resultString)
+        } else if tenPctButton.isSelected == true && billTextField.text != ""{
+            result = (Float(billTextField.text!)! + (Float(billTextField.text!)! * 0.10)) / Float(splitNumberLabel.text!)!
+            resultString = String(format: "%.2f", result)
+            
+            self.performSegue(withIdentifier: "goToResult", sender: self)
+            
+            print(resultString)
+        } else if twentyPctButton.isSelected == true && billTextField.text != ""{
+            result = (Float(billTextField.text!)! + (Float(billTextField.text!)! * 0.20)) / Float(splitNumberLabel.text!)!
+            resultString = String(format: "%.2f", result)
+            
+            self.performSegue(withIdentifier: "goToResult", sender: self)
+            
+            print(resultString)
         } else {
-            print(0.2)
+            billTextField.placeholder = "Error!"
         }
         
-        print(splitNumberLabel.text!)
+        
     }
     
+    //MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.totalValue = resultString
+            destinationVC.totalAmounOfPeople = splitNumberLabel.text!
+            destinationVC.totalPct = chosenPct
+        }
+    }
 
 }
 
