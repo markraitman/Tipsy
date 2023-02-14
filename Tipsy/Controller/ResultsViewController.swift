@@ -9,14 +9,14 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     var totalValue: String?
     var totalAmounOfPeople: String = ""
     var totalPct: String = ""
     
     
 
-    //MARK: Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,11 +24,11 @@ class ResultsViewController: UIViewController {
         settingsLabel.text = "Split between \(totalAmounOfPeople) people, with \(totalPct) tip"
     }
     
-    //MARK: Outlets
+    //MARK: - Outlets
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func recalclulatePressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

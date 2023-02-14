@@ -9,13 +9,13 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     var result: Float = 0.00
     var resultString = ""
     var chosenPct = ""
     
     
-    //MARK: Lifecycle
+    //MARK: - Lifecycle 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,7 +27,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var twentyPctButton: UIButton!
     @IBOutlet weak var splitNumberLabel: UILabel!
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func tipChanged(_ sender: UIButton) {
         
         if sender == zeroPctButton{
@@ -83,7 +83,7 @@ class CalculatorViewController: UIViewController {
         
     }
     
-    //MARK: Segue
+    //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultsViewController
@@ -92,6 +92,6 @@ class CalculatorViewController: UIViewController {
             destinationVC.totalPct = chosenPct
         }
     }
-
+    
 }
 
